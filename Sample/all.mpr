@@ -21,5 +21,45 @@ file02 = hellostr.bmp
 file03 = xj.mid
 
 [files]
+#include <mrp_sdk.h>
+
+void animate_box() {
+    // Define initial and final positions
+    int start_x = 88; // Center X (176/2)
+    int start_y = 110; // Center Y (220/2)
+    int end_x = 0;
+    int end_y = 0;
+
+    // Define duration
+    int duration = 4000; // 4 seconds
+
+    // Loop to simulate animation
+    for (int t = 0; t <= duration; t += 100) {
+        int current_x = start_x + (end_x - start_x) * t / duration;
+        int current_y = start_y + (end_y - start_y) * t / duration;
+        int opacity = t / duration;
+
+        // Clear screen
+        mrp_clear_screen();
+
+        // Draw box at current position
+        mrp_draw_box(current_x, current_y, 100, 100, COLOR_GOLD, opacity);
+
+        // Delay for next frame
+        mrp_delay(100);
+    }
+}
+
+int main() {
+    // Initialize MRP environment
+    mrp_init();
+
+    // Run animation
+    animate_box();
+
+    // Clean up
+    mrp_exit();
+    return 0;
+}
 
 
