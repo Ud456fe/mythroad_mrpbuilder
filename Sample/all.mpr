@@ -7,7 +7,7 @@ version=1001
 visible=1
 cpu=3
 vendor=M-CAP7AIN
-description=Hello Iran
+description=Hello Uzbekistan
 include=C:\Users\iDevice\Desktop\SKYSDK\include
 config=mtk240
 
@@ -21,5 +21,4 @@ file02 = hellostr.bmp
 file03 = xj.mid
 
 [files]
-
 
